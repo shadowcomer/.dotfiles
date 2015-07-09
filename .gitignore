@@ -1,0 +1,12 @@
+#####################
+# Emacs
+#####################
+
+# Pkgs
+.emacs.d/elpa
+.emacs.d/pkgs
+
+# Misc
+
+bookmarks
+*~
