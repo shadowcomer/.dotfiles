@@ -90,6 +90,10 @@
 
 (define-key global-map [remap list-buffers] 'helm-buffers-list)
 
+(set-face-attribute 'helm-selection nil
+		    :background "blue"
+		    :foreground "white")
+
 (setq
  helm-gtags-ignore-case t
  helm-gtags-auto-update t
@@ -131,3 +135,6 @@
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (setq org-agenda-include-diary t)
+
+;; Speedbar
+(setq speedbar-show-unknown-files t)
