@@ -93,6 +93,9 @@
 (set-face-attribute 'helm-selection nil
 		    :background "blue"
 		    :foreground "white")
+(set-face-attribute 'helm-source-header nil
+		    :background "red"
+		    :foreground "white")
 
 (setq
  helm-gtags-ignore-case t
