@@ -141,3 +141,15 @@
 
 ;; Speedbar
 (setq speedbar-show-unknown-files t)
+
+;; Company-mode. Code completion.
+(require 'company)
+(require 'cc-mode)
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-backends (delete 'company-semantic company-backends))
+(define-key c-mode-map  [(tab)] 'company-complete)
+(define-key c++-mode-map  [(tab)] 'company-complete)
+
+(add-to-list 'company-backends 'company-c-headers)
+;; Example of adding a new include path
+;; (add-to-list 'company-c-headers-path-system "/usr/include/c++/4.8/")
