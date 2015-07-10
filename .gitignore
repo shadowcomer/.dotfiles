@@ -6,6 +6,10 @@
 .emacs.d/elpa
 .emacs.d/pkgs
 
+# Semanticdb
+
+semanticdb/
+
 # Misc
 .org-id-locations
 bookmarks
