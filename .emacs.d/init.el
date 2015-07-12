@@ -160,3 +160,8 @@
 ;; Projectile
 (require 'projectile)
 (projectile-global-mode)
+
+;; Sticky functions to top
+(require 'stickyfunc-enhance)
+(global-semantic-stickyfunc-mode 1)
+(add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
