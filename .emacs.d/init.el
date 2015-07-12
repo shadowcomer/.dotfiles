@@ -183,3 +183,8 @@
 (setq show-trailing-whitespace t)
 (setq whitespace-style '(face trailing))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Automatic indentation mode detection for foreign files
+(require 'dtrt-indent)
+(dtrt-indent-mode 1)
+(setq dtrt-indent-verbosity 0)
