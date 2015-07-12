@@ -171,5 +171,7 @@
 
 ;; Automatic whitespace clearing
 (whitespace-mode 1)
-(setq show-trailing-whitespace 1)
+(global-whitespace-mode 1)
+(setq show-trailing-whitespace t)
+(setq whitespace-style '(face trailing))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
