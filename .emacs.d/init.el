@@ -169,6 +169,14 @@
 ;; Automatic newline identation
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+;; Tab configuration
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4) ; or any other preferred value
+(setq c-basic-offset 4)
+(setq c-basic-indent 4)
+(defvaralias 'c-basic-offset 'tab-width)
+(defvaralias 'cperl-indent-level 'tab-width)
+
 ;; Automatic whitespace clearing
 (whitespace-mode 1)
 (global-whitespace-mode 1)
