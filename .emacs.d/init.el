@@ -6,6 +6,7 @@
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'load-path "~/.emacs.d/pkgs/helm-setup")
+(add-to-list 'load-path "~/.emacs.d/ede-projects.el")
 (package-initialize)
 
 (require 'ggtags)
@@ -33,7 +34,7 @@
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebihnd tab to do persistent action
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
@@ -121,35 +122,35 @@
 (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
 (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(haskell-mode-hook (quote (turn-on-haskell-indent)))
- '(org-agenda-files (quote ("~/repos/personal/organization/todo.org"))))
- 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;;
+;; Custom file for automatically set variables.
+;;    This allows for hidden configurations.
+(setq custom-file "~/.emacs.d/custom-init.el")
+(load custom-file)
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (setq org-agenda-include-diary t)
 
 ;; Speedbar
 (setq speedbar-show-unknown-files t)
+(sr-speedbar-open)
 
 ;; Company-mode. Code completion.
-(require 'company)
-(require 'cc-mode)
-(add-hook 'after-init-hook 'global-company-mode)
-(setq company-backends (delete 'company-semantic company-backends))
-(define-key c-mode-map  [(tab)] 'company-complete)
-(define-key c++-mode-map  [(tab)] 'company-complete)
 
-(add-to-list 'company-backends 'company-c-headers)
+(require 'cc-mode)
+(require 'company)
+(setq company-backends (delete 'company-semantic company-backends))
+(define-key c-mode-map (kbd "M-o") 'company-complete)
+(define-key c++-mode-map (kbd "M-o") 'company-complete)
+(add-hook 'after-init-hook 'global-company-mode)
 ;; Example of adding a new include path
 ;; (add-to-list 'company-c-headers-path-system "/usr/include/c++/4.8/")
+
+(require 'semantic)
+(global-semanticdb-minor-mode 1)
+(global-semantic-idle-scheduler-mode 1)
+(semantic-mode)
+
+;; Emacs Development Environment (EDE).
+(require 'ede)
+(global-ede-mode)
