@@ -165,3 +165,11 @@
 (require 'stickyfunc-enhance)
 (global-semantic-stickyfunc-mode 1)
 (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+
+;; Automatic newline identation
+(global-set-key (kbd "RET") 'newline-and-indent)
+
+;; Automatic whitespace clearing
+(whitespace-mode 1)
+(setq show-trailing-whitespace 1)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
