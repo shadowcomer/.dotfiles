@@ -188,3 +188,8 @@
 (require 'dtrt-indent)
 (dtrt-indent-mode 1)
 (setq dtrt-indent-verbosity 0)
+
+;; GDB windows
+(setq
+ gdb-many-windows t
+ gdb-show-main t)
