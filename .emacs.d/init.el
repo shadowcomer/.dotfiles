@@ -156,3 +156,7 @@
 ;; Emacs Development Environment (EDE).
 (require 'ede)
 (global-ede-mode)
+
+;; Projectile
+(require 'projectile)
+(projectile-global-mode)
