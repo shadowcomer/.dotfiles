@@ -15,3 +15,9 @@ semanticdb/
 bookmarks
 *~
 recentf
+
+# Additional private configs
+.emacs.d/cedet-projects.el
+.emacs.d/ede-projects.el
+.emacs.d/custom-init.el
+
