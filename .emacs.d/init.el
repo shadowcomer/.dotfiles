@@ -143,6 +143,8 @@
 (define-key c-mode-map (kbd "M-o") 'company-complete)
 (define-key c++-mode-map (kbd "M-o") 'company-complete)
 (add-hook 'after-init-hook 'global-company-mode)
+(require 'company-c-headers)
+(add-to-list 'company-backends 'company-c-headers)
 ;; Example of adding a new include path
 ;; (add-to-list 'company-c-headers-path-system "/usr/include/c++/4.8/")
 
