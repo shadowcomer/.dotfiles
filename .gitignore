@@ -24,3 +24,6 @@ recentf
 # Projectile files
 .emacs.d/projectile-bookmarks.eld
 .emacs.d/projectile.cache
+
+# Python
+.emacs.d/.python-environments
