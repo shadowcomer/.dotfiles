@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xrdb -merge .Xresources
+feh --bg-fill ~/Pictures/iron-man.jpg &
